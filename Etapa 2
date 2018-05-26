@@ -1,0 +1,53 @@
+var x = 0;
+var y = 0;
+function setup() {
+  createCanvas(400, 400);
+  drawplayer();
+  
+}
+function drawplayer(){
+   fill(255,20,45);
+  rect(250, 300, 75, 500);
+  
+  fill(20, 200, 200);
+  ellipse(x+20,300+y, 55,100);
+  fill(20, 20, 200);
+  ellipse(x+35,360+y, 15,55);
+    fill(20, 20, 200);
+  ellipse(x+5,360+y, 15,55);
+    fill(20, 20, 200);
+  ellipse(x,290+y, 15,55);
+      fill(20, 20, 200);
+  ellipse(x+40,290+y, 15,55);
+        fill(20, 20, 200);
+  ellipse(x+20,230+y, 55,55);
+  if(y < -195){
+   y = -195; 
+  }
+    if(y > 15){
+   y = 15; 
+  }
+    if(x < -1){
+   x = 0; 
+  }
+    if(x > 360){
+   x = 360; 
+  }
+} 
+ 
+
+function draw() {
+  background(255);    
+  drawplayer();
+  if (keyIsDown(LEFT_ARROW))
+    x = x-7;
+  if (keyIsDown(RIGHT_ARROW))
+    x = x+7;
+
+  if (keyIsDown(UP_ARROW))
+    y= y-27;
+
+  if (keyIsDown(DOWN_ARROW))
+    y= y+7;
+    y = y+17;//gravidade
+}
